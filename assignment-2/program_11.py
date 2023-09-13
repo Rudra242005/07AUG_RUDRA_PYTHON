@@ -2,5 +2,9 @@
 
 char = input("enter a string : ")
 
+for i in range(len(char)):
+    print(slice(char))
+    
+
 
 
