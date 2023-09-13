@@ -5,8 +5,10 @@ instead of the empty string."""
 str1 = input("enter a string : ")
 
 if len(str1) > 2:
-    str2 = str1[0:2] + str1[-1:-3]
+    str2 = str1[:2] + str1[-2:] 
+    
     print(str2)
+    
 
 else:
     print(str1)
