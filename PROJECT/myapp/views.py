@@ -5,13 +5,6 @@ from .models import *
 # Create your views here.
 
 def index(request):
-    if request.method=='POST':
-        user=coustomerForm(request.POST)
-        if user.is_valid():
-            user.save()
-            print("success")
-        else:
-            print(user.errors)
     return render(request,'index.html')
 
 def clients(request):
@@ -30,4 +23,11 @@ def services(request):
     return render(request,'services.html')
 
 def estimate(request):
-    return render(request,'estimate.html')
+        if request.method=='POST':
+            user=coustomerForm(request.POST)
+            if user.is_valid():
+                user.save()
+                print("success")
+            else:
+                print(user.errors)
+        return render(request,'estimate.html')
