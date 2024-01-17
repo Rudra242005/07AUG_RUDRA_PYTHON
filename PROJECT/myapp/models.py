@@ -11,3 +11,10 @@ class coustomer(models.Model):
     state=models.CharField(max_length=20)
     zip=models.IntegerField()
     mobile=models.BigIntegerField()
+
+
+class contact(models.Model):
+    name = models.CharField(max_length=20)
+    email = models.EmailField()
+    mobile = models.BigIntegerField()
+    text = models.TextField()

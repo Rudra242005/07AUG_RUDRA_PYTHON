@@ -11,6 +11,13 @@ def clients(request):
     return render(request,'clients.html')
 
 def contact(request):
+    if request.method=='POST':
+        contact=contactForm(request.POST)
+        if contact.is_valid():
+            contact.save()
+            print("request sent!")
+        else:
+            print(contact.errors)
     return render(request,'contact.html')
 
 def about(request):
